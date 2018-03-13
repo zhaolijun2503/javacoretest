@@ -3,6 +3,8 @@ package org.javacore.GuavaCache;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 
+import lombok.NonNull;
+
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
@@ -40,7 +42,7 @@ public class ListenableFutureDemo {
 
 	       Futures.addCallback(future, new FutureCallback<String>() {
 	           @Override
-	           public void onSuccess(@Nullable String result) {
+	           public void onSuccess(@NonNull String result) {
 	               System.out.println("callback result: "+result);
 	           }
 
