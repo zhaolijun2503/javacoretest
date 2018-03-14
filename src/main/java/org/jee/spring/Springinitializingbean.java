@@ -15,6 +15,7 @@ import org.springframework.beans.factory.InitializingBean;
  * 因为这样会将代码与Spring耦合在一起，有一个可选的方案是，
  * 在bean定义中指定一个普通的析构方法，然后在XML配置文件中通过指定destroy-method属性来完成。如下面的定义所示：
  * <bean id="exampleInitBean" class="examples.ExampleBean" destroy-method="cleanup"/>
+ * @PostContsuct注解的使用
  */
 public class Springinitializingbean implements InitializingBean,DisposableBean{
 
