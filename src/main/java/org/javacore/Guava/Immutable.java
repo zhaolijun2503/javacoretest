@@ -1,4 +1,4 @@
-package org.javacore.Immutable;
+package org.javacore.Guava;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;

@@ -1,4 +1,4 @@
-package org.javacore.GuavaCache;
+package org.javacore.Guava;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
