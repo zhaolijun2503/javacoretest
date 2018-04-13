@@ -4,6 +4,7 @@ import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
 /*
+ * https://www.jianshu.com/p/210115d5a4aa
  * Spring的InitializingBean接口有很好的用处,位于spring beans中,它只提供一个方法afterPropertiesSet(),
  * 当你实现了该方法后,spring就会对你提供框架级的支持:当你通过sring容器生产出实现了该接口的类的实例后,
  * 它就会调用afterPropertiesSet方法,通过这个方法,你可以检查你的bean是否正确地被初始化了.
