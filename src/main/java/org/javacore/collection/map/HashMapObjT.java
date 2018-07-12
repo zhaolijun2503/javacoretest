@@ -22,6 +22,7 @@ import java.util.HashMap;
  * @author Jeff Lee
  * @since 2015-6-18 22:05:44
  * 	HashMap 操作对象的决定因子：hashCode与equals
+ *  HashMap源码分析；https://www.jianshu.com/p/b40fd341711e
  */
 public class HashMapObjT{
 	public static void main(String[] args){
