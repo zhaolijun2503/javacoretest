@@ -18,12 +18,16 @@ package org.javacore.stream;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
+
 /**
  * Stream API 集合的流式操作
- *
+ * https://juejin.im/entry/585e6b5f128fe1006dee6329
  * Created by bysocket on 16/7/13.
  */
 public class CollectionStreamTest {
@@ -32,6 +36,12 @@ public class CollectionStreamTest {
         list.add("aa");
         list.add("cccc");
         list.add("bbb");
+        
+        List<Map> listMaps=Lists.newArrayList();
+        Map<String, Object> map=Maps.newHashMap();
+        map.put("a", "a");
+        map.put("b", "b");
+        listMaps.add(map);
 
         /**
          * Stream的使用:
@@ -57,8 +67,10 @@ public class CollectionStreamTest {
         List list2 = list.stream().map(str -> str.replace("c","*")).collect(Collectors.toList());
 
         list2.stream().forEach(System.out::println);
-        System.out.println();
-
+        
+        Map maps=listMaps.stream().collect(Collectors.toMap(s -> s.get("a"), s-> s));
+        System.out.println(maps);
+        
         /**
          * 提取
          *      从skip开始至limit位置为止

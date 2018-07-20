@@ -1,5 +1,14 @@
 package org.javacore.stream;
 
+import java.util.Arrays;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.DoubleStream;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+
 /*
  * Copyright [2015] [Jeff Lee]
  *
@@ -23,5 +32,27 @@ package org.javacore.stream;
  */
 public class CreateStreamTest {
     public static void main(String[] args) {
+    	
+    	String[] values = { "aaa", "bbbb", "ddd", "cccc" };
+    	Stream<String> stringStream = Arrays.stream(values);
+    	Stream<String> stringStreamAlternative = Stream.of(values);
+    	Stream<Integer> integerStream = Stream.of(1, 2, 3);
+    	IntStream intStream = IntStream.of(1, 2, 3);
+    	DoubleStream doubleStream = DoubleStream.of(1.0, 2.0, 3.0);
+    	IntStream intStreams = Arrays.stream(new int[]{ 1, 2, 3 });
+    	
+    	Map<String, List<Integer>> map = new LinkedHashMap<>();
+    	map.put("a", Arrays.asList(1, 2, 3));
+    	map.put("b", Arrays.asList(4, 5, 6));
+
+    	List<Integer> allValues = map.values() // Collection<List<Integer>>
+    	        .stream()                      // Stream<List<Integer>>
+    	        .flatMap(List::stream)         // Stream<Integer>
+    	        .collect(Collectors.toList());
+
+    	System.out.println(allValues);
+    	// [1, 2, 3, 4, 5, 6]
+    	//含Map的List可以被扁平化处理成一个连续的Stream：
+    	
     }
 }
